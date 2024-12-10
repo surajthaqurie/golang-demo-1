@@ -1,0 +1,20 @@
+package router
+
+import (
+	"mongodbapi/controller"
+
+	"github.com/gorilla/mux"
+)
+
+func Router() *mux.Router {
+
+	router := mux.NewRouter()
+
+	router.HandleFunc("/api/movies", controller.GetMyAllMovies).Methods("GET")
+	router.HandleFunc("/api/movie", controller.CreateMovie).Methods("POST")
+	router.HandleFunc("/api/movie/{id}", controller.MarkAsWatch).Methods("PUT")
+	router.HandleFunc("/api/movie/{id}", controller.DeleteOneMovie).Methods("DELETE")
+	router.HandleFunc("/api/movie-all", controller.DeleteManyMovie).Methods("DELETE")
+
+	return router
+}

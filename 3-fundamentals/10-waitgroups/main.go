@@ -37,7 +37,7 @@ func fetchStatus(w http.ResponseWriter, r *http.Request) {
 	var wg sync.WaitGroup
 
 	for _, url := range urls {
-		wg.Add(3)
+		wg.Add(1)
 
 		go func(url string) {
 			resp, err := http.Get(url)

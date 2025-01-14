@@ -1,0 +1,3 @@
+#immudb: (https://docs.immudb.io/master/)
+docker pull codenotary/immudb
+docker run -it -d -p 3322:3322 -p 9497:9497 --name immudb codenotary/immudb
